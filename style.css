@@ -1,0 +1,56 @@
+/* font-family: 'Sail', cursive; */
+
+* {
+  box-sizing: border-box;
+}
+
+/* sales page */
+
+.sales-wrapper {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* home page */
+
+.home-wrapper {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+img {
+  width: 100%;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 800px) {
+  header {
+    flex-direction: row;
+  }
+}
+
+nav ul {
+  list-style: none;
+  padding-top: 1em;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.img-container {
+  width: 200px;
+}
+
+/* typography */
+
+header h1 {
+  font-family: "Sail", cursive;
+  font-size: 4rem;
+}
