@@ -71,6 +71,7 @@ Shop.prototype.render = function () {
 
   //append row of data to cookiesTable
   const dataRow = document.createElement("tr");
+  dataRow.setAttribute("class", "location-row");
   cookiesTable.appendChild(dataRow);
 
   const locationCell = document.createElement("th");
@@ -122,13 +123,13 @@ function getFooterRow() {
 
   for (let i = 0; i < hourlyTotals.length; i++) {
     const footerCell = document.createElement("td");
-    footerCell.setAttribute("class", "highlight");
+    footerCell.setAttribute("class", "highlight footer-row");
     footerCell.textContent = hourlyTotals[i];
     footerRow.appendChild(footerCell);
   }
 
   const absoluteTotalCell = document.createElement("td");
-  absoluteTotalCell.setAttribute("class", "total");
+  absoluteTotalCell.setAttribute("class", "total footer-row");
   absoluteTotalCell.textContent = totalOfTotals;
   footerRow.appendChild(absoluteTotalCell);
 }

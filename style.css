@@ -27,29 +27,43 @@ td {
 }
 
 th {
-  background-color: lightpink;
+  background-color: darkred;
+  color: white;
   text-align: left;
 }
 
 .highlight {
-  color: red;
+  color: darkred;
   font-weight: bold;
+}
+
+.location-row:nth-child(even) {
+  background-color: aliceblue;
+}
+
+.footer-row {
+  background-color: beige;
 }
 
 .total {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 /* home page */
 
 .home-wrapper {
   font-family: Georgia, "Times New Roman", Times, serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 img {
   width: 100%;
 }
+
+/* header */
 
 header {
   display: flex;
@@ -69,14 +83,50 @@ header {
 nav ul {
   list-style: none;
   padding-top: 1em;
+  font-weight: bold;
+  font-size: 1.25rem;
 }
 
 nav a {
   text-decoration: none;
+  color: black;
 }
 
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav,
 .img-container {
   width: 200px;
+}
+
+/* main */
+
+main {
+  flex-grow: 1;
+  background-color: bisque;
+}
+
+article {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+article:last-child {
+  padding-bottom: 2rem;
+}
+
+div.article-div {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* footer */
+
+footer {
+  padding: 2rem;
 }
 
 /* typography */
@@ -84,4 +134,19 @@ nav a {
 header h1 {
   font-family: "Sail", cursive;
   font-size: 4rem;
+  color: darksalmon;
+  text-shadow: 2px 2px 5px black, 1px 1px 2px black;
+}
+
+h2 {
+  font-family: "Sail", cursive;
+  font-size: 2rem;
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+
+p.footer-text {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
 }
