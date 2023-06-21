@@ -193,7 +193,26 @@ p.bold {
   margin: 0.5em 0;
 }
 
+.contact-p {
+  font-size: 1.25rem;
+  margin: 0.5em 0;
+}
+
 li.stand-location {
   font-style: oblique;
   font-weight: bold;
 }
+
+a.email-link {
+  color: black;
+  text-decoration: none;
+}
+
+a.email-link:hover {
+  text-decoration: underline;
+}
+
+/* .article-div p {
+  font-size: 1.25rem;
+  f
+} */
