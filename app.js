@@ -4,15 +4,14 @@ const cookieStandForm = document.getElementById("cookie-stand-form");
 cookieStandForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  removeFooterRow();
-
   const location = e.target.location.value;
   const minCustomers = e.target.minCustomers.value;
   const maxCustomers = e.target.maxCustomers.value;
   const avgCookies = e.target.avgCookies.value;
 
   const newStand = new Shop(location, minCustomers, maxCustomers, avgCookies);
-  console.log(newStand);
+
+  removeFooterRow();
 
   newStand.render();
   getFooterRow();

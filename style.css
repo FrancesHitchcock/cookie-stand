@@ -12,8 +12,29 @@
   border-bottom: 1px solid;
 }
 
+#cookie-stand-form {
+  width: 600px;
+  margin: 0 auto 2em auto;
+  padding: 1em 3em;
+  background-color: beige;
+  border: 1px solid black;
+}
+
+legend {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
 input {
-  margin: 1em 0;
+  margin: 1em 0 1em 0.5em;
+  padding: 0.4em;
+  background-color: aliceblue;
+  border: 1px solid black;
+  font-size: 1rem;
+}
+
+input[type="number"] {
+  width: 100px;
 }
 
 button[type="submit"] {
@@ -24,6 +45,19 @@ button[type="submit"] {
   font-size: 1.125rem;
   font-weight: bold;
   margin: 1em 0;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+
+button[type="submit"]:hover {
+  background-color: brown;
+  transform: scale(1.05);
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 /* table styles */
