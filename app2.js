@@ -1,6 +1,6 @@
 "use strict";
 
-const tableContainer = document.getElementById("table-container");
+const container = document.getElementById("container");
 let cookiesTable;
 
 const hoursOpen = [
@@ -92,7 +92,7 @@ Shop.prototype.render = function () {
 
 function getHeaderRow() {
   cookiesTable = document.createElement("table");
-  tableContainer.appendChild(cookiesTable);
+  container.appendChild(cookiesTable);
 
   const headerRow = document.createElement("tr");
   cookiesTable.appendChild(headerRow);
