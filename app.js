@@ -1,4 +1,26 @@
 "use strict";
+const cookieStandForm = document.getElementById("cookie-stand-form");
+
+cookieStandForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  removeFooterRow();
+
+  const location = e.target.location.value;
+  const minCustomers = e.target.minCustomers.value;
+  const maxCustomers = e.target.maxCustomers.value;
+  const avgCookies = e.target.avgCookies.value;
+
+  const newStand = new Shop(location, minCustomers, maxCustomers, avgCookies);
+  console.log(newStand);
+
+  newStand.render();
+  getFooterRow();
+
+  cookieStandForm.reset();
+});
+
+const allStands = [];
 
 const tableContainer = document.getElementById("table-container");
 let cookiesTable;
@@ -36,7 +58,8 @@ function Shop(location, minCustomers, maxCustomers, avCookiesPerCustomer) {
   this.customersPerHour = [];
   this.cookiesPerHour = [];
   this.totalCookies = 0;
-  this.render();
+  this.pushStand();
+  //   this.render();
 }
 
 Shop.prototype.getCustomersPerHour = function () {
@@ -90,6 +113,10 @@ Shop.prototype.render = function () {
   dataRow.appendChild(totalCell);
 };
 
+Shop.prototype.pushStand = function () {
+  allStands.push(this);
+};
+
 function getHeaderRow() {
   cookiesTable = document.createElement("table");
   tableContainer.appendChild(cookiesTable);
@@ -107,7 +134,6 @@ function getHeaderRow() {
   }
 
   const headerCellTotal = document.createElement("th");
-  //   headerCellTotal.setAttribute("class", "highlight");
   headerCellTotal.textContent = "Total";
   headerRow.appendChild(headerCellTotal);
 }
@@ -134,6 +160,16 @@ function getFooterRow() {
   footerRow.appendChild(absoluteTotalCell);
 }
 
+function renderStands() {
+  for (let i = 0; i < allStands.length; i++) {
+    allStands[i].render();
+  }
+}
+
+function removeFooterRow() {
+  cookiesTable.removeChild(cookiesTable.lastChild);
+}
+
 getHeaderRow();
 
 const seattle = new Shop("Seattle", 23, 65, 6.3);
@@ -141,5 +177,7 @@ const tokyo = new Shop("Tokyo", 3, 24, 1.2);
 const paris = new Shop("Paris", 20, 38, 2.3);
 const dubai = new Shop("Dubai", 11, 38, 3.7);
 const lima = new Shop("Lima", 2, 16, 4.6);
+
+renderStands();
 
 getFooterRow();
