@@ -15,3 +15,7 @@ Objects JavaScript file renamed to app1.js
 ### Lighthouse score
 
 ![Lighthouse score](/images/Screenshot%202023-06-20%20151831.png "Lighthouse score")
+
+## Thursday 20th June
+
+Added data collection form to sales page, and functionality to app.js to add new data to table.
